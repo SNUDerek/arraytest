@@ -54,6 +54,9 @@ len array: 768  len data: 768
 
 decoded vector compared with source with 0 different values
 
+input hexstring same as re-converted hex string: true
+
+
 $ node test.js 64 2
 testing vectors/fp64_arr02_hex.txt
 
@@ -69,6 +72,8 @@ len array: 768  len data: 768
 7: 0.10572180353964022     0.10572180353964022
 
 decoded vector compared with source with 0 different values
+
+input hexstring same as re-converted hex string: true
 ```
 
 ## references
