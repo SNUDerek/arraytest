@@ -1,14 +1,12 @@
 # test encoding vectors as hex strings
 
-## idea
+## what is
 
-i don't wanna store dense vector embedding data as `ARRAY` in postgres because it's not supported in all sql dbs.
+just testing recovering encoded vectors from python to javascript, seeing is believing etc.
 
-so, we can encode the data as strings.
+i don't wanna store dense vector embedding data as `ARRAY` in postgres because of support concerns.
 
-in python, i can use: `myNumpyArray.tobytes().hex()` to yield hex-encoded data as string. 
-
-(you need to know dtype and shape (if not flat) to recover the data.)
+so, i can encode the data as strings. in python, i can use: `myNumpyArray.tobytes().hex()` to yield hex-encoded data as string. you need to know dtype and shape (if not flat) to recover the data.
 
 this test confirms i can also reconstruct data in javascript (not bound to python+numpy to get data stored this way)
 
@@ -43,6 +41,8 @@ output is like,
 $ node test.js 32 0
 testing vectors/fp32_arr00_hex.txt
 
+len array: 768  len data: 768
+
 0: 0.3353233337402344   0.3353233337402344
 1: 0.7392846345901489   0.7392846345901489
 2: 0.766887366771698    0.766887366771698
@@ -56,6 +56,8 @@ decoded vector compared with source with 0 different values
 
 $ node test.js 64 2
 testing vectors/fp64_arr02_hex.txt
+
+len array: 768  len data: 768
 
 0: 0.12180643229876786     0.12180643229876786
 1: 0.577577641340863    0.577577641340863

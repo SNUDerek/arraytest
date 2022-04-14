@@ -52,6 +52,8 @@ floatvector = hexStringtoVector(hexString, dtype=floatprec);
 
 console.log(`testing ${fileName}\n`);
 
+console.log(`len array: ${floatvector.length}\tlen data: ${stringValues.length-1}\n`);  // minus last empty line
+
 let diffs = 0;
 for (let i = 0; i < floatvector.length; i++) {
     if (i < 8) {
